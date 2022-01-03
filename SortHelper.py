@@ -2,7 +2,6 @@ import tkinter
 import os
 import tkinter.messagebox
 
-
 class GUI(tkinter.Frame):
     def __init__(self, master = None):
         super().__init__(master)
@@ -111,17 +110,6 @@ class GUI(tkinter.Frame):
                     os.replace(dir + "\\" + fcont[d][0], dir + "\\" + tname + str(d+1) + fcont[d][3])
 
             else: tkinter.messagebox.askokcancel(title="No path input", message="Please input a correct path")
-
-
-
-
-
-
-
-
-
-
-
 
 root = tkinter.Tk()
 root.title("SortHelper")
