@@ -58,9 +58,6 @@ class GUI(tkinter.Frame):
 
         self.b1.pack(anchor="w")
 
-    def rbdeselct(self):
-        print("d")
-
     def mediasort(self):
         if self.sortopt.get() == 0: tkinter.messagebox.askokcancel(title="No option chosen", message="Please choose one of the sorting options")
         else:
@@ -70,16 +67,12 @@ class GUI(tkinter.Frame):
                 fcont = []
                 for i in folder:
                     if self.pngopt.get() and i.endswith(".png"):
-                        print(i)
                         fcont.append([i, os.path.getsize(dir + "\\" + i), os.path.getctime(dir + "\\" + i), ".png"])
                     elif self.webpopt.get() and i.endswith(".webp"):
-                        print(i)
                         fcont.append([i, os.path.getsize(dir + "\\" + i), os.path.getctime(dir + "\\" + i), ".webp"])
                     elif self.jpgopt.get() and i.endswith(".jpg"):
-                        print(i)
                         fcont.append([i, os.path.getsize(dir + "\\" + i), os.path.getctime(dir + "\\" + i), ".jpg"])
                     elif self.jpegopt.get() and i.endswith("jpeg"):
-                        print(i)
                         fcont.append([i, os.path.getsize(dir + "\\" + i), os.path.getctime(dir + "\\" + i), ".jpeg"])
 
                 tsort = self.sortopt.get()
@@ -104,9 +97,6 @@ class GUI(tkinter.Frame):
 
                 len(fcont)
                 for d in range(0, len(fcont)):
-                    print(str(d))
-                    print(tname)
-                    print(tname+str(d))
                     os.replace(dir + "\\" + fcont[d][0], dir + "\\" + tname + str(d+1) + fcont[d][3])
 
             else: tkinter.messagebox.askokcancel(title="No path input", message="Please input a correct path")
